@@ -1,3 +1,5 @@
+const uuidv4 = require('uuid/v4');
+
 const numDays31 = [...Array(32).keys()];
 numDays31.shift(); //remove 0 from beginning
 
@@ -57,6 +59,17 @@ var today = new Date();
 var todaysDate = today.getDate();
 var month = today.getMonth() + 1; //January is 1!
 
+var formattedDate = new Date().toISOString().substr(0, 19) + '.0Z';
+
+// var utcDate = today.getUTCDate();
+// var utcMonth = today.getUTCMonth();
+// var year = today.getFullYear();
+// var hours = today.getUTCHours();
+// var minutes = today.getUTCMinutes();
+// var seconds = today.getUTCSeconds();
+
+// var formattedDate = `${year}-${utcMonth}-${utcDate}T${hours}:${minutes}:${seconds}.0Z`
+console.log();
 // var todaysDate = 31;
 // var month = 8;
 
@@ -64,23 +77,33 @@ var month = today.getMonth() + 1; //January is 1!
 function getText() {
     // check if today is blackout date for both parks
     //Disneyland
-    var result = {
-        text: undefined,
-        text2: undefined
+    var disneyResult = {
+        uid: uuidv4(),
+        updateDate: formattedDate,
+        titleText: "Disney result JSON",
+        mainText: undefined,
+        redirectionUrl: "https://alanvilla.com"
+    };
+    var californiaResult = {
+        uid: uuidv4(),
+        updateDate: formattedDate,
+        titleText: "California adventure result JSON",
+        mainText: undefined,
+        redirectionUrl: "https://alanvilla.com"
     };
     if (checkBlackout(disneyDeluxeBlackoutDates, "disneyland")) {
-        result.text = "Disneyland is not available today."
+        disneyResult.mainText = "Disneyland is not available today."
     } else {
-        result.text = "Disneyland is available today."
+        disneyResult.mainText = "Disneyland is available today."
     }
 
     //California Adventure
     if (checkBlackout(californiaDeluxeBlackoutDates, "californiaAdventure")) {
-        result.text2 = "California adventure is not available today."
+        californiaResult.mainText = "California adventure is not available today."
     } else {
-        result.text2 = "California adventure is available today."
+        californiaResult.mainText = "California adventure is available today."
     }
-    return result;
+    return [disneyResult, californiaResult];
 }
 
 function checkBlackout(parkBlackoutDates, park) {

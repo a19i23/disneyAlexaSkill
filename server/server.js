@@ -1,7 +1,6 @@
 require('./config/config');
 let utility = require('./utility');
 
-// const _ = require('lodash');
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -31,7 +30,7 @@ app.use(bodyParser.json());
 // });
 
 
-app.get('/todos', (req, res) => {
+app.get('/disneyskill', (req, res) => {
     res.send(
         utility.getText()
     );
