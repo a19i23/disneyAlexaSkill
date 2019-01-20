@@ -1,19 +1,29 @@
 {
-  "name": "disneyalexaskill",
-  "version": "1.0.0",
-  "description": "Alexa skill for checking blackout dates for annual pass members",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/a19i23/disneyAlexaSkill.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/a19i23/disneyAlexaSkill/issues"
-  },
-  "homepage": "https://github.com/a19i23/disneyAlexaSkill#readme"
+    "name": "disneyalexaskill",
+    "version": "1.0.0",
+    "description": "Alexa skill for checking blackout dates for annual pass members",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/a19i23/disneyAlexaSkill.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.18.3",
+        "express": "^4.16.4"
+    },
+    "devDependencies": {
+        "expect": "^23.6.0",
+        "mocha": "^5.2.0",
+        "nodemon": "^1.10.2",
+        "supertest": "^3.3.0"
+    },
+    "bugs": {
+        "url": "https://github.com/a19i23/disneyAlexaSkill/issues"
+    },
+    "homepage": "https://github.com/a19i23/disneyAlexaSkill#readme"
 }
