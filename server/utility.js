@@ -84,6 +84,7 @@ function getText() {
         mainText: undefined,
         redirectionUrl: "https://alanvilla.com"
     };
+
     var californiaResult = {
         uid: uuidv4(),
         updateDate: formattedDate,
@@ -91,6 +92,7 @@ function getText() {
         mainText: undefined,
         redirectionUrl: "https://alanvilla.com"
     };
+
     if (checkBlackout(disneyDeluxeBlackoutDates, "disneyland")) {
         disneyResult.mainText = "Disneyland is not available today."
     } else {
